@@ -74,36 +74,62 @@
   </div>
 </section>
 
-<!-- Form tambah dan update film -->
-<div class="form-modal" id="movieFormModal" aria-hidden="true">
-  <div class="form-backdrop" onclick="closeMovieForm()"></div>
-  <div class="form-dialog" role="dialog" aria-modal="true" aria-labelledby="formTitle">
-    <div class="form-header">
-      <div><div class="eyebrow">Kelola koleksi film</div><h2 id="formTitle">Tambah Film</h2></div>
-      <button class="modal-close" type="button" onclick="closeMovieForm()" aria-label="Tutup">&times;</button>
-    </div>
-    <form id="movieForm">
-      <div class="form-body">
-        <div class="mb-3">
-          <label class="form-label" for="movieTitle">Judul Film *</label>
-          <input class="form-control" id="movieTitle" type="text" maxlength="100" required placeholder="Contoh: Interstellar">
+Nikky
+      <div class="genre-section" data-genre="Action">
+        <div class="genre-divider"><h3>Action</h3><a href="#genre-action" onclick="showGenre('Action'); return false;">Lihat semua <i class="bi bi-arrow-right"></i></a></div>
+        <div class="movie-list">
+          <article class="movie-row" data-title="The Dark Knight" data-genre="Action Crime">
+            <div class="poster"><img src="asset/5.jpg" alt="The Dark Knight"></div>
+            <div class="movie-info">
+              <div class="movie-meta"><span>2008</span><span>152 menit</span><span>Action · Crime · Drama</span></div>
+              <h4>The Dark Knight</h4>
+              <p>Batman menghadapi ancaman baru dari Joker, sosok kriminal yang ingin menjerumuskan Gotham ke dalam kekacauan. Sebuah kisah tentang pilihan, keadilan, dan batas antara pahlawan dan penjahat.</p>
+              <div class="mb-2"><span class="tag">Action</span><span class="tag">Crime</span><span class="tag">Drama</span></div>
+              <div class="movie-actions"><span class="rating"><i class="bi bi-star-fill"></i>9.0/10</span><button class="btn btn-sm btn-outline-soft ms-2" onclick="showDetails('The Dark Knight','2008','Action · Crime · Drama','Batman menghadapi ancaman baru dari Joker, sosok kriminal yang ingin menjerumuskan Gotham ke dalam kekacauan. Sebuah kisah tentang pilihan, keadilan, dan batas antara pahlawan dan penjahat.','9.0')">Lihat detail</button></div>
+            </div>
+          </article>
+          <article class="movie-row" data-title="Mad Max Fury Road" data-genre="Action Adventure">
+            <div class="poster"><img src="asset/6.jpg" alt="Mad Max Fury Road"></div>
+            <div class="movie-info">
+              <div class="movie-meta"><span>2015</span><span>120 menit</span><span>Action · Adventure</span></div>
+              <h4>Mad Max: Fury Road</h4>
+              <p>Di dunia pasca-apokaliptik, Max bergabung dengan Furiosa dalam pelarian berbahaya melintasi gurun. Aksi tanpa henti berpadu dengan visual dunia yang unik.</p>
+              <div class="mb-2"><span class="tag">Action</span><span class="tag">Adventure</span></div>
+              <div class="movie-actions"><span class="rating"><i class="bi bi-star-fill"></i>8.1/10</span><button class="btn btn-sm btn-outline-soft ms-2" onclick="showDetails('Mad Max: Fury Road','2015','Action · Adventure','Di dunia pasca-apokaliptik, Max bergabung dengan Furiosa dalam pelarian berbahaya melintasi gurun. Aksi tanpa henti berpadu dengan visual dunia yang unik.','8.1')">Lihat detail</button></div>
+            </div>
+          </article>
         </div>
-        <div class="row">
-          <div class="col-sm-6 mb-3">
-            <label class="form-label" for="movieYear">Tahun Rilis *</label>
-            <input class="form-control" id="movieYear" type="number" min="1888" max="2100" required placeholder="Contoh: 2024">
-          </div>
-          <div class="col-sm-6 mb-3">
-            <label class="form-label" for="movieRating">Rating (0–10) *</label>
-            <input class="form-control" id="movieRating" type="number" min="0" max="10" step="0.1" required placeholder="Contoh: 8.5">
-          </div>
+      </div>
+
+      <div class="genre-section" data-genre="Drama">
+        <div class="genre-divider"><h3>Drama</h3><a href="#genre-drama" onclick="showGenre('Drama'); return false;">Lihat semua <i class="bi bi-arrow-right"></i></a></div>
+        <div class="movie-list">
+          <article class="movie-row" data-title="The Shawshank Redemption" data-genre="Drama">
+            <div class="poster"><img src="asset/3.jpg" alt="The Shawshank Redemption"></div>
+            <div class="movie-info">
+              <div class="movie-meta"><span>1994</span><span>142 menit</span><span>Drama</span></div>
+              <h4>The Shawshank Redemption</h4>
+              <p>Andy Dufresne, seorang bankir yang dihukum atas kejahatan yang tidak ia lakukan, membangun persahabatan dan mempertahankan harapan selama menjalani masa tahanan.</p>
+              <div class="mb-2"><span class="tag">Drama</span></div>
+              <div class="movie-actions"><span class="rating"><i class="bi bi-star-fill"></i>9.3/10</span><button class="btn btn-sm btn-outline-soft ms-2" onclick="showDetails('The Shawshank Redemption','1994','Drama','Andy Dufresne, seorang bankir yang dihukum atas kejahatan yang tidak ia lakukan, membangun persahabatan dan mempertahankan harapan selama menjalani masa tahanan.','9.3')">Lihat detail</button></div>
+            </div>
+          </article>
         </div>
-        <div class="mb-3">
-          <label class="form-label" for="movieGenre">Genre *</label>
-          <select class="form-select" id="movieGenre" required>
-            <option value="">Pilih genre</option>
-            <option>Action</option><option>Thriller</option><option>Horror</option><option>Drama</option><option>Crime</option>
-          </select>
+      </div>
+
+      <div class="genre-section" data-genre="Sci-Fi">
+        <div class="genre-divider"><h3>Sci-Fi</h3><a href="#genre-scifi" onclick="showGenre('Sci-Fi'); return false;">Lihat semua <i class="bi bi-arrow-right"></i></a></div>
+        <div class="movie-list">
+          <article class="movie-row" data-title="Interstellar" data-genre="Sci-Fi Adventure Drama">
+            <div class="poster"><img src="asset/7.jpg" alt="Interstellar"></div>
+            <div class="movie-info">
+              <div class="movie-meta"><span>2014</span><span>169 menit</span><span>Sci-Fi · Adventure · Drama</span></div>
+              <h4>Interstellar</h4>
+              <p>Sekelompok penjelajah melakukan perjalanan melewati lubang cacing demi mencari tempat tinggal baru bagi umat manusia, sementara seorang ayah berjuang melawan jarak dan waktu.</p>
+              <div class="mb-2"><span class="tag">Sci-Fi</span><span class="tag">Adventure</span><span class="tag">Drama</span></div>
+              <div class="movie-actions"><span class="rating"><i class="bi bi-star-fill"></i>8.7/10</span><button class="btn btn-sm btn-outline-soft ms-2" onclick="showDetails('Interstellar','2014','Sci-Fi · Adventure · Drama','Sekelompok penjelajah melakukan perjalanan melewati lubang cacing demi mencari tempat tinggal baru bagi umat manusia, sementara seorang ayah berjuang melawan jarak dan waktu.','8.7')">Lihat detail</button></div>
+            </div>
+          </article>
         </div>
         <div class="mb-3">
           <label class="form-label" for="movieDescription">Deskripsi *</label>
